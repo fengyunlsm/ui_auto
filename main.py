@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
-import time, datetime, os
+import time, datetime, os, traceback
 
 
 class SeleniumDriver:
@@ -69,7 +69,7 @@ class SeleniumDriver:
                     options.add_experimental_option('prefs', prefs) # 设置默认路径
                     driver = webdriver.Chrome(options=options) # 输入参数为options=options
                     return driver
-        except Exception, e:
+        except Exception as e:
             print(traceback.print_exc())
             return None
 

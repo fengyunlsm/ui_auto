@@ -69,7 +69,7 @@ class SeleniumDriver:
                     prefs = {'download.default_directory': 'D:\\Download\\', 'profile.default_content_settings.popups': 0} # 设置自定义路径
                     options.add_experimental_option('prefs', prefs) # 设置默认路径
                     driver = webdriver.Chrome(options=options) # 输入参数为options=options
-                    return driver
+                return driver
         except Exception as e:
             print(traceback.print_exc())
             return None

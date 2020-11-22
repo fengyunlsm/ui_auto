@@ -25,7 +25,7 @@ class SeleniumDriver:
                 if 'linux' in sys.platform:
                     # options = webdriver.ChromeOptions()
                     binary_location = '/usr/bin/google-chrome'
-                    # chrome_driver_binary = '/usr/bin/chromedriver'
+                    chrome_driver_binary = '/usr/bin/chromedriver'
                     # options.add_argument('--headless')  # 无界面运行 
                     # options.add_argument('--no-sandbox') # 以最高权限运行
                     # options.add_argument('--start-maximized')   # 最大化运行，设置元素定位比较准确
@@ -38,7 +38,7 @@ class SeleniumDriver:
                     # # chrome_options.add_argument('--disable-dev-shm-usage')
                     # options.add_argument("service_args=['–ignore-ssl-errors=true', '–ssl-protocol=TLSv1']") 
                     # options.add_experimental_option('excludeSwitches', ['enable-automation'])
-                    # # options = chrome_driver_binary
+                   
                     # os.environ["webdriver.chrome.driver"] = chromedriver
                     # driver = webdriver.Chrome(executable_path = chromedriver, options = options) # 输入参数为options=options
                     # driver.quit()
@@ -56,6 +56,7 @@ class SeleniumDriver:
                     # options.add_argument("start-maximized")
                     # options.add_argument("enable-automation")
                     options.add_argument("--no-sandbox")
+                    options = chrome_driver_binary
                     # options.add_argument("--disable-infobars")
                     # options.add_argument("--disable-dev-shm-usage")
                     # options.add_argument("--disable-browser-side-navigation")

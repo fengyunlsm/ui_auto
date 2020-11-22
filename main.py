@@ -24,7 +24,7 @@ class SeleniumDriver:
             if browser == 'chrome':
                 if 'linux' in sys.platform:
                     # options = webdriver.ChromeOptions()
-                    # binary_location = '/usr/bin/google-chrome'
+                    binary_location = '/usr/bin/google-chrome'
                     # chrome_driver_binary = '/usr/bin/chromedriver'
                     # options.add_argument('--headless')  # 无界面运行 
                     # options.add_argument('--no-sandbox') # 以最高权限运行
@@ -53,23 +53,25 @@ class SeleniumDriver:
 
                     options = webdriver.ChromeOptions()
                     options.add_argument("--headless")
-                    options.add_argument("start-maximized")
-                    options.add_argument("enable-automation")
+                    # options.add_argument("start-maximized")
+                    # options.add_argument("enable-automation")
                     options.add_argument("--no-sandbox")
-                    options.add_argument("--disable-infobars")
-                    options.add_argument("--disable-dev-shm-usage")
-                    options.add_argument("--disable-browser-side-navigation")
-                    options.add_argument("--disable-gpu")
-                    driver = webdriver.Chrome(chrome_options=options)
+                    # options.add_argument("--disable-infobars")
+                    # options.add_argument("--disable-dev-shm-usage")
+                    # options.add_argument("--disable-browser-side-navigation")
+                    # options.add_argument("--disable-gpu")
+                    # driver = webdriver.Chrome(chrome_options=options)
                     driver.set_window_size(1024, 768)
-                    driver = webdriver.Chrome(options=option)
+                    driver = webdriver.Chrome(chrome_options=option, driver_path=binary_location, service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
                 else:
                     options = webdriver.ChromeOptions()
                     prefs = {'download.default_directory': 'D:\\Download\\', 'profile.default_content_settings.popups': 0} # 设置自定义路径
                     options.add_experimental_option('prefs', prefs) # 设置默认路径
                     driver = webdriver.Chrome(options=options) # 输入参数为options=options
                     return driver
-        except:
+        except Exception:
+            print ("1232131321")
+            print(Exception)
             return None
 
 

@@ -76,14 +76,16 @@ class SeleniumDriver:
 
 
     def get_url(self, url):
-        if self.driver != None:
-            if 'https://' in url:
-                self.driver.get(url) # 打开对应的网站
-            elif 'http://' in url:
-                self.driver.get(url)
-            else:
-                print("打开地址失败")
-        else:
+        try:
+            if self.driver != None:
+                if 'https://' in url:
+                    self.driver.get(url) # 打开对应的网站
+                elif 'http://' in url:
+                    self.driver.get(url)
+                else:
+                    print("地址中不包含 http 和 httpa")
+        except Exception as e:
+            print(traceback.print_exc())
             print("打开地址失败")
         time.sleep(2)
         self.driver.quit()

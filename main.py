@@ -61,7 +61,7 @@ class SeleniumDriver:
                     # options.add_argument("--disable-browser-side-navigation")
                     # options.add_argument("--disable-gpu")
                     # driver = webdriver.Chrome(chrome_options=options)
-                    driver = webdriver.Chrome(chrome_options=option, driver_path=binary_location, service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
+                    driver = webdriver.Chrome(chrome_options=options, driver_path=binary_location, service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
                 else:
                     options = webdriver.ChromeOptions()
                     prefs = {'download.default_directory': 'D:\\Download\\', 'profile.default_content_settings.popups': 0} # 设置自定义路径

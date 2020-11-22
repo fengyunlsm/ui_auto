@@ -69,9 +69,8 @@ class SeleniumDriver:
                     options.add_experimental_option('prefs', prefs) # 设置默认路径
                     driver = webdriver.Chrome(options=options) # 输入参数为options=options
                     return driver
-        except Exception:
-            print ("1232131321")
-            print(Exception)
+        except Exception, e:
+            print(traceback.print_exc())
             return None
 
 

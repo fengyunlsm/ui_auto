@@ -61,7 +61,6 @@ class SeleniumDriver:
                     # options.add_argument("--disable-browser-side-navigation")
                     # options.add_argument("--disable-gpu")
                     # driver = webdriver.Chrome(chrome_options=options)
-                    driver.set_window_size(1024, 768)
                     driver = webdriver.Chrome(chrome_options=option, driver_path=binary_location, service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
                 else:
                     options = webdriver.ChromeOptions()

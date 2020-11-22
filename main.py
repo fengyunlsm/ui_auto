@@ -56,14 +56,14 @@ class SeleniumDriver:
                     # options.add_argument("start-maximized")
                     # options.add_argument("enable-automation")
                     options.add_argument("--no-sandbox")
-                    chromedriver = chrome_driver_binary
-                    os.environ["webdriver.chrome.driver"] = chromedriver
+                    # chromedriver = chrome_driver_binary
+                    # os.environ["webdriver.chrome.driver"] = chromedriver
                     # options.add_argument("--disable-infobars")
                     # options.add_argument("--disable-dev-shm-usage")
                     # options.add_argument("--disable-browser-side-navigation")
                     # options.add_argument("--disable-gpu")
                     # driver = webdriver.Chrome(chrome_options=options)
-                    driver = webdriver.Chrome(chrome_options=options, executable_path=binary_location, service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
+                    driver = webdriver.Chrome(chrome_options=options, executable_path=chrome_driver_binary, service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
                 else:
                     options = webdriver.ChromeOptions()
                     prefs = {'download.default_directory': 'D:\\Download\\', 'profile.default_content_settings.popups': 0} # 设置自定义路径
